@@ -1,101 +1,115 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <title>Mogwai Text Inspector</title>
-  <link rel="icon" type="image/png" href="https://www.pngitem.com/pimgs/m/340-3401917_transparent-gremlins-mogwai-clipart-png-gremlins-silhouette-png.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Mogwai Text Inspector</title>
+    <link rel="icon" type="image/png"
+        href="https://www.pngitem.com/pimgs/m/340-3401917_transparent-gremlins-mogwai-clipart-png-gremlins-silhouette-png.png">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://analytics.vazio.club/script.js"
+        data-website-id="a26a3e85-9b84-45fa-8b03-fc0f5f395e8b"></script>
+    <script src="app.js" defer></script>
 </head>
+
 <body>
-  <div class="page-container">
-    <header class="site-header">
-      <div class="brand">
-        <img class="brand-logo" src="https://www.pngitem.com/pimgs/m/340-3401917_transparent-gremlins-mogwai-clipart-png-gremlins-silhouette-png.png" alt="">
-        <span>Mogwai</span>
-      </div>
-    </header>
+    <div class="page-container">
+        <header class="site-header">
+            <div class="brand">
+                <img class="brand-logo"
+                    src="https://www.pngitem.com/pimgs/m/340-3401917_transparent-gremlins-mogwai-clipart-png-gremlins-silhouette-png.png"
+                    alt="">
+                <span>Mogwai</span>
+            </div>
+        </header>
 
-    <main>
-      <div class="page-intro">
-        <h1>Text Inspector</h1>
-        <p>Throw water at them.</p>
-      </div>
-
-      <section class="workspace" aria-label="Text editor and tools">
-        <div class="editor">
-          <div class="panel-header">
-            <h2 class="panel-title">Text</h2>
-          </div>
-          <div class="editor-field">
-            <div class="highlight-layer" id="highlights" aria-hidden="true"></div>
-            <textarea id="input" aria-label="Your text" spellcheck="false" placeholder="Paste or type your text here..."></textarea>
-          </div>
-          <div class="editor-footer">
-            <span id="input-count">0 characters - 0 lines</span>
-            <span>UTF-8 / Unicode</span>
-          </div>
-        </div>
-
-        <div class="controls">
-          <div class="panel-header">
-            <h2 class="panel-title">Toolbox</h2>
-          </div>
-          <div class="controls-body">
-            <div>
-              <h3 class="control-label">Case and naming</h3>
-              <div class="tool-grid">
-                <button class="tool-button" id="case-upper" type="button">UPPERCASE</button>
-                <button class="tool-button" id="case-lower" type="button">lowercase</button>
-                <button class="tool-button" id="case-title" type="button">Title Case</button>
-                <button class="tool-button" id="case-camel" type="button">camelCase</button>
-                <button class="tool-button" id="case-pascal" type="button">PascalCase</button>
-                <button class="tool-button" id="case-snake" type="button">snake_case</button>
-                <button class="tool-button" id="case-screaming" type="button">SCREAMING_SNAKE</button>
-                <button class="tool-button" id="case-kebab" type="button">kebab-case</button>
-              </div>
+        <main>
+            <div class="page-intro">
+                <h1>Text Inspector</h1>
+                <p>Throw water at them.</p>
             </div>
 
-            <div>
-              <h3 class="control-label">Cleanup</h3>
-              <div class="tool-grid">
-                <button class="tool-button" id="trim" type="button">Trim edges<small>Remove surrounding whitespace</small></button>
-                <button class="tool-button" id="remove-invisible" type="button">Remove invisible<small>Zero-width, bidi and BOM</small></button>
-                <button class="tool-button" id="normalize-spaces" type="button">Normalize spaces<small>Unicode spaces → regular</small></button>
-                <button class="tool-button" id="strip-accents" type="button">Strip accents<small>For identifiers and names</small></button>
-              </div>
-            </div>
+            <section class="workspace" aria-label="Text editor and tools">
+                <div class="editor">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Text</h2>
+                    </div>
+                    <div class="editor-field">
+                        <div class="highlight-layer" id="highlights" aria-hidden="true"></div>
+                        <textarea id="input" aria-label="Your text" spellcheck="false"
+                            placeholder="Paste or type your text here..."></textarea>
+                    </div>
+                    <div class="editor-footer">
+                        <span id="input-count">0 characters - 0 lines</span>
+                        <span>UTF-8 / Unicode</span>
+                    </div>
+                </div>
 
-            <div class="actions">
-              <button class="button primary" id="undo" type="button" disabled>Undo</button>
-              <button class="button" id="copy" type="button">Copy text</button>
-              <button class="button" id="clear" type="button">Clear</button>
-            </div>
-            <span id="message" role="status" aria-live="polite"></span>
-          </div>
-        </div>
-      </section>
+                <div class="controls">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Toolbox</h2>
+                    </div>
+                    <div class="controls-body">
+                        <div>
+                            <h3 class="control-label">Case and naming</h3>
+                            <div class="tool-grid">
+                                <button class="tool-button" id="case-upper" type="button">UPPERCASE</button>
+                                <button class="tool-button" id="case-lower" type="button">lowercase</button>
+                                <button class="tool-button" id="case-title" type="button">Title Case</button>
+                                <button class="tool-button" id="case-camel" type="button">camelCase</button>
+                                <button class="tool-button" id="case-pascal" type="button">PascalCase</button>
+                                <button class="tool-button" id="case-snake" type="button">snake_case</button>
+                                <button class="tool-button" id="case-screaming" type="button">SCREAMING_SNAKE</button>
+                                <button class="tool-button" id="case-kebab" type="button">kebab-case</button>
+                            </div>
+                        </div>
 
-      <section class="results" aria-labelledby="findings-title">
-        <div class="section-header">
-          <h2 id="findings-title">Gremlins</h2>
-        </div>
-        <div class="stats">
-          <div class="stat total"><strong id="count-total">0</strong><span>Found</span></div>
-          <div class="stat"><strong id="count-non-ascii">0</strong><span>Non-ASCII</span></div>
-          <div class="stat"><strong id="count-hidden">0</strong><span>Hidden</span></div>
-        </div>
-        <div class="findings-list" id="findings"></div>
-        <p class="findings-help">Yellow marks non-ASCII characters. Coral marks hidden characters and controls; a thin coral bar shows zero-width characters. Regular spaces, tabs and line breaks are ignored.</p>
-      </section>
-    </main>
+                        <div>
+                            <h3 class="control-label">Cleanup</h3>
+                            <div class="tool-grid">
+                                <button class="tool-button" id="trim" type="button">Trim edges<small>Remove surrounding
+                                        whitespace</small></button>
+                                <button class="tool-button" id="remove-invisible" type="button">Remove
+                                    invisible<small>Zero-width, bidi and BOM</small></button>
+                                <button class="tool-button" id="normalize-spaces" type="button">Normalize
+                                    spaces<small>Unicode spaces → regular</small></button>
+                                <button class="tool-button" id="strip-accents" type="button">Strip accents<small>For
+                                        identifiers and names</small></button>
+                            </div>
+                        </div>
 
-    <footer class="site-footer">
-      <span>Mogwai</span>
-      <a href="https://matheusdmm.dev/">MTH Tools</a>
-    </footer>
-  </div>
+                        <div class="actions">
+                            <button class="button primary" id="undo" type="button" disabled>Undo</button>
+                            <button class="button" id="copy" type="button">Copy text</button>
+                            <button class="button" id="clear" type="button">Clear</button>
+                        </div>
+                        <span id="message" role="status" aria-live="polite"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results" aria-labelledby="findings-title">
+                <div class="section-header">
+                    <h2 id="findings-title">Gremlins</h2>
+                </div>
+                <div class="stats">
+                    <div class="stat total"><strong id="count-total">0</strong><span>Found</span></div>
+                    <div class="stat"><strong id="count-non-ascii">0</strong><span>Non-ASCII</span></div>
+                    <div class="stat"><strong id="count-hidden">0</strong><span>Hidden</span></div>
+                </div>
+                <div class="findings-list" id="findings"></div>
+                <p class="findings-help">Yellow marks non-ASCII characters. Coral marks hidden characters and controls;
+                    a thin coral bar shows zero-width characters. Regular spaces, tabs and line breaks are ignored.</p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <span>Mogwai</span>
+            <a href="https://matheusdmm.dev/">MTH Tools</a>
+        </footer>
+    </div>
 </body>
+
 </html>
